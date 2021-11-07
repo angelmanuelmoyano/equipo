@@ -3,11 +3,12 @@ package com.practica.internet.services;
 import com.practica.internet.entities.Operador;
 import com.practica.internet.repositories.RepositorioOperador;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
 import java.util.List;
 import java.util.Optional;
-
+@Service
 public class ServicioOperador  implements  ServicioBase<Operador>{
     @Autowired
     private RepositorioOperador repositorio;

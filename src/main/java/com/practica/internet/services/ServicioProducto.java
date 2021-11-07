@@ -5,11 +5,12 @@ import com.practica.internet.entities.Provincias;
 
 import com.practica.internet.repositories.RepositorioProducto;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
 import java.util.List;
 import java.util.Optional;
-
+@Service
 public class ServicioProducto implements  ServicioBase<Producto> {
     @Autowired
     private RepositorioProducto repositorio;

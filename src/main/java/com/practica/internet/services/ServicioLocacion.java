@@ -3,11 +3,12 @@ package com.practica.internet.services;
 import com.practica.internet.repositories.RepositorioLocacion;
 import org.springframework.beans.factory.annotation.Autowired;
 import com.practica.internet.entities.Locacion;
+import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
 import java.util.List;
 import java.util.Optional;
-
+@Service
 public class ServicioLocacion  implements ServicioBase<Locacion>{
 
     @Autowired
