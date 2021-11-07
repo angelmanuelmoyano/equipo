@@ -64,7 +64,7 @@ public class ServicioEmpleado  implements  ServicioBase<Empleado>{
             Optional<Empleado> opt = this.repositorio.findById(id);
             if (!opt.isEmpty()) {
                 Empleado empleado = opt.get();
-                // actividad_producto.setActivo(!actividad_producto.isActivo());
+                //actividad_producto.setActivo(!actividad_producto.isActivo());
                 this.repositorio.save(empleado);
             } else {
                 throw new Exception();
