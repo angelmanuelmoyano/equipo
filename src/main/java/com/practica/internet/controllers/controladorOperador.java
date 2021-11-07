@@ -36,7 +36,8 @@ public class controladorOperador {
             }
             return "views/formularios/operador";
         }catch(Exception e){
-            return "views/listado_operadores";
+            model.addAttribute("error", e.getMessage());
+            return "views/error";
         }
     }
 
@@ -57,7 +58,8 @@ public class controladorOperador {
             }
             return "redirect:/views/listado_operadores";
         }catch(Exception e){
-              return "views/listado_operadores";
+            model.addAttribute("error", e.getMessage());
+            return "views/error";
         }
     }
 
