@@ -26,5 +26,40 @@ public class controladorOperador {
             return "views/inicio";
         }
     }
+    @GetMapping("/formularios/operador/{id}")
+    public String formularioOperador(Model model,@PathVariable("id")long id){
+        try {
+            if(id==0){
+                model.addAttribute("operador",new Operador());
+            }else{
+                model.addAttribute("operador",this.svcOperador.findById(id));
+            }
+            return "views/formularios/operador";
+        }catch(Exception e){
+            return "views/listado_operadores";
+        }
+    }
+
+
+    @PostMapping("/formularios/operador/{id}")
+    public String guardarOperador(
+            @ModelAttribute("operador") Operador operador,
+            Model model,@PathVariable("id")long id
+    ) {
+
+        try {
+           if(id==0){
+
+                this.svcOperador.saveOne(operador);
+            }else{
+
+                this.svcOperador.updateOne(operador,id);
+            }
+            return "redirect:/views/listado_operadores";
+        }catch(Exception e){
+              return "views/listado_operadores";
+        }
+    }
+
 
 }

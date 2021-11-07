@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <title>Operarios</title>
+</head>
+<body>
+<!--<nav th:replace="components/navbar :: nav_bar"></nav>-->
+<div class="container">
+    <div class="row mt-5">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-body">
+                    <form th:action="@{/formularios/operador/{id}(id=${operador.id_operador})}" method="post" th:object="${operador}" enctype="multipart/form-data">
+
+                            <div class="form-group col-md-6">
+                                <label for="operador">Operador:</label>
+                                <input type="text" class="form-control" id="operador" th:field="*{operador}">
+                                <div class="text-danger" th:if="${#fields.hasErrors('operador')}" th:errors="*{operador}"></div>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="ruc">Nro Documento: </label>
+                                <input type="text" class="form-control" id="ruc" th:field="*{ruc}">
+
+                                <div class="text-danger" th:if="${#fields.hasErrors('ruc')}" th:errors="*{ruc}">
+
+                                </div>
+                            </div>
+                            <div class="form-group col-md-8">
+                                <label for="direccion" class="form-label">Direccion:  </label>
+                                <input type="text" class="form-control" id="direccion" name="direccion">
+                                <!--<div class="text-danger" th:if="${errorImagenM}" th:text="${errorImagenMsg}"></div>-->
+                            </div>
+                            <div class="col-md-4">
+                                <label for="telefono" class="form-label">Telefono:  </label>
+                                <input type="text" class="form-control" id="telefono" name="telefono">
+
+                            </div>
+
+                        <div class="row m-3">
+                            <button class="btn btn-success" type="submit" style="width:100%">Guardar</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
