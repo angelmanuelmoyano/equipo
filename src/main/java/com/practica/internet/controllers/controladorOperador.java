@@ -45,7 +45,7 @@ public class controladorOperador {
     @PostMapping("/formularios/operador/{id}")
     public String guardarOperador(
             @ModelAttribute("operador") Operador operador,
-            Model model,@PathVariable("id")long id
+            Model model,@PathVariable("id_operador")long id
     ) {
 
         try {
@@ -59,7 +59,8 @@ public class controladorOperador {
             return "redirect:/views/listado_operadores";
         }catch(Exception e){
             model.addAttribute("error", e.getMessage());
-            return "views/error";
+            System.out.println(e);
+           return "error";
         }
     }
 
