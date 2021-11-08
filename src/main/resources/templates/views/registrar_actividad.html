@@ -192,23 +192,24 @@
                     </h5>
                 </div>
                 <div class="card-body">
-                    <form class="row g-3">
+                    <form class="row g-3" th:action="@{/actividad/{id}(id=${actividad.id})}" method="post" th:object="${actividad}">
                         <div class="col-md-12">
                             <label class="form-label">
                                 Actividad
                             </label>
-                            <input type="text" class="form-control" id="validationDefault01" required>
+                            <input type="text" class="form-control" id="validationDefault01" th:field="*{titulo}" required>
+                        </div>
+                        <div class="card text-dark bg-info mb-3">
+                            <div class="card-header">
+                                <div class="d-grid gap-2 col-2 mx-auto">
+                                    <button type="button" class="btn btn-outline-danger">Guardar</button>
+                                </div>
+                            </div>
                         </div>
                     </form>
                 </div>
             </div>
-            <div class="card text-dark bg-info mb-3">
-                <div class="card-header">
-                    <div class="d-grid gap-2 col-2 mx-auto">
-                        <button type="button" class="btn btn-outline-danger">Guardar</button>
-                    </div>
-                </div>
-            </div>
+
         </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"

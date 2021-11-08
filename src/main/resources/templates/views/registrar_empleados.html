@@ -193,7 +193,7 @@
                 </div>
                 <!--formulario de registro de empleados-->
                 <div class="card-body">
-                    <form class="row g-3" action="@{/empleado/{id}(id=${empleado.id})}" method="post" th:object="${empleado}" enctype="multipart/form-data" >
+                    <form class="row g-3"  th:action="@{/empleado/{id}(id=${empleado.id})}" method="post" th:object="${empleado}" enctype="multipart/form-data" >
                         <div class="col-md-6">
                             <label class="form-label">
                                 Nombres

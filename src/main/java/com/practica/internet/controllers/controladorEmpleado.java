@@ -59,7 +59,7 @@ public class controladorEmpleado {
             }catch(Exception e){
                 model.addAttribute("error", e.getMessage());
 
-                return "error";
+               return "error";
             }
         }
 
