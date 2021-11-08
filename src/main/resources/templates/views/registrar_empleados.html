@@ -193,25 +193,25 @@
                 </div>
                 <!--formulario de registro de empleados-->
                 <div class="card-body">
-                    <form class="row g-3" action="@{/empleado/{id}(id=${empleado.id})}">
+                    <form class="row g-3" action="@{/empleado/{id}(id=${empleado.id})}" method="post" th:object="${empleado}" enctype="multipart/form-data" >
                         <div class="col-md-6">
                             <label class="form-label">
                                 Nombres
                             </label>
-                            <input type="text" class="form-control" name="nombre_empleado"  th:field="*{nombre_empleado}" required>
+                            <input type="text" class="form-control"   th:field="*{nombre_empleado}" required>
 
                         </div>
                         <div class="col-md-6">
                             <label class="form-label">
                                 Apellido
                             </label>
-                            <input type="text" class="form-control" nombre="apellido_empleado" th:field="*{apellido_empleado}" required>
+                            <input type="text" class="form-control"  th:field="*{apellido_empleado}" required>
                         </div>
                         <div class="col-md-12">
                             <label class="form-label">
                                 Usuario
                             </label>
-                            <input type="text" class="form-control"  nombre="username" th:field="*{username}"required>
+                            <input type="text" class="form-control"   th:field="*{username}"required>
                         </div>
                       <!--  <div class="col-md-6">
                             <label class="form-label">
@@ -228,13 +228,13 @@
                             <label class="form-label">
                                 Correo Electrónico
                             </label>
-                            <input type="text" class="form-control"  name="email_empleado" th:field="*{email_empleado}" required>
+                            <input type="text" class="form-control"   th:field="*{email_empleado}" required>
                         </div>
                         <div class="col-md-12">
                             <label class="form-label">
                                 Dirección
                             </label>
-                            <input type="text" class="form-control"  name="direccion" th:field="*{direccion}"  required>
+                            <input type="text" class="form-control"   th:field="*{direccion}"  required>
                         </div>
                         <div class="col-md-6">
                             <label class="form-label">
@@ -260,25 +260,25 @@
                                 Estado Civil
                             </label>
                             <select class="form-control" th:field="*{estado_civil}" required>
-                                <option selected>Abrir para seleccionar Estado Civil</option>
+                                <option  value="" selected>Abrir para seleccionar Estado Civil</option>
                                 <option value="soltero">Soltero</option>
                                 <option value="casado">Casado</option>
                                 <option value="conviviente">En pareja </option>
                             </select>
                         </div>
-
+                        <div class="card text-dark bg-info mb-3">
+                            <div class="card-header">
+                                <div class="d-grid gap-2 col-2 mx-auto">
+                                    <button type="submit" class="btn btn-outline-danger">Guardar</button>
+                                </div>
+                            </div>
+                        </div>
                     </form>
                 </div>
             </div>
 
 
-            <div class="card text-dark bg-info mb-3">
-                <div class="card-header">
-                    <div class="d-grid gap-2 col-2 mx-auto">
-                        <button type="button" class="btn btn-outline-danger">Guardar</button>
-                    </div>
-                </div>
-            </div>
+
         </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
