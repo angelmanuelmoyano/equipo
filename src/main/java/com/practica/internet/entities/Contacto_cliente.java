@@ -16,7 +16,7 @@ import javax.persistence.*;
 public class Contacto_cliente {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id_contacto_cliente;
+    private long id;
     private String nombre_contacto;
     private String celular_contacto;
     private String telefono_contacto_cliente;

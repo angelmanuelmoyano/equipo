@@ -1,7 +1,8 @@
 package com.practica.internet.services;
 
-import com.practica.internet.entities.Contacto_sitio;
 import com.practica.internet.entities.Departamento;
+
+
 import com.practica.internet.repositories.RepositorioDepartamento;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -24,6 +25,7 @@ public class ServicioDepartamento implements ServicioBase<Departamento> {
         } catch (Exception e) {
             throw new Exception(e.getMessage());
         }
+
     }
 
     @Override
@@ -38,7 +40,7 @@ public class ServicioDepartamento implements ServicioBase<Departamento> {
     }
 
     @Override
-    @Transactional
+
     public Departamento saveOne(Departamento entity) throws Exception {
         try {
             Departamento departamento = this.repositorio.save(entity);
@@ -49,12 +51,10 @@ public class ServicioDepartamento implements ServicioBase<Departamento> {
     }
 
     @Override
-    @Transactional
     public Departamento updateOne(Departamento entity, long id) throws Exception {
         try {
-            Optional<Departamento> opt = this.repositorio.findById(id);
+            Optional<Departamento> opt =this.repositorio.findById(id);
             Departamento departamento = opt.get();
-            departamento = this.repositorio.save(entity);
             return departamento;
         } catch (Exception e) {
             throw new Exception(e.getMessage());
@@ -62,13 +62,12 @@ public class ServicioDepartamento implements ServicioBase<Departamento> {
     }
 
     @Override
-    @Transactional
     public boolean deleteById(long id) throws Exception {
         try {
             Optional<Departamento> opt = this.repositorio.findById(id);
-            if (!opt.isEmpty()) {
+            if(!opt.isEmpty()) {
                 Departamento departamento = opt.get();
-                //cliente.setActivo(!cliente.isActivo());
+                //departamento.setActivo(!departamento.isActvo());
                 this.repositorio.save(departamento);
             } else {
                 throw new Exception();

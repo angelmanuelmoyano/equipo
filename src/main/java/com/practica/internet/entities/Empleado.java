@@ -18,7 +18,7 @@ import java.util.List;
 public class Empleado {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id_empleado;
+    private long id ;
     private String nombre_empleado;
     private String apellido_empleado;
     private String email_empleado;
@@ -42,9 +42,6 @@ public class Empleado {
     private Date usuario_creado;
     private Date usuario_editado;
 
-    @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "kf_departamento", nullable = false)
-    private Departamento departamento;
 
     @OneToMany(mappedBy = "empleado")
     private List<Asignacion_actividad> asignacion_actividads;

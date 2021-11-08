@@ -17,7 +17,7 @@ import java.util.Date;
 public class Actividad_producto {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id_producto_activida;
+    private long id;
     private String tipo;
     private float numero_activo;
     private float cantidad;
@@ -29,8 +29,6 @@ public class Actividad_producto {
     @JoinColumn(name = "kf_producto", nullable = false)
     private Producto producto;
 
-    @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name= "kf_departamento", nullable = false)
-    private Departamento departamento;
+
 
 }

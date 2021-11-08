@@ -17,18 +17,12 @@ import java.util.List;
 public class Departamento {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id_departamento;
+    private long id;
     private String nombre_departamento;
-    private String direccion_departamento;
-    private String telefono_departamento;
 
-    @OneToMany(mappedBy = "departamento")
-    private List<Actividad_producto> actividad_productos;
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "kf_provincias", nullable = false)
+    private Provincias provincias;
 
-    @OneToMany(mappedBy = "departamento")
-    private List<Producto> productos;
-
-    @OneToMany(mappedBy = "departamento")
-    private List<Empleado> empleados;
 
 }

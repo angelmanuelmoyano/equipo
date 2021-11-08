@@ -18,10 +18,10 @@ import java.util.List;
 public class Cliente {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id_cliente;
+    private long id;
 
     private String nombre_cliente;
-    private String ruc_cliente;
+    private String nro_documento;
     private String direccion_cliente;
     private String telefono_cliente;
     private String correo_cliente;

@@ -17,7 +17,7 @@ import java.util.List;
 public class Actividad {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id_actividad;
+    private long id;
 
     private String titulo;
 

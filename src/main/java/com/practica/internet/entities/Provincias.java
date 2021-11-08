@@ -17,9 +17,9 @@ import java.util.List;
 public class Provincias {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id_provincia;
+    private long id;
     private String provincia;
 
     @OneToMany(mappedBy = "provincias")
-    private List<Cantones> cantones;
+    private List<Departamento> departamentos;
 }

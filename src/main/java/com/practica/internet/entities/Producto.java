@@ -18,7 +18,7 @@ import java.util.List;
 public class Producto {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id_producto;
+    private long id;
     private String descripcion;
     private String serie;
     private float cantidad;
@@ -28,12 +28,4 @@ public class Producto {
 
     @OneToMany(mappedBy = "producto")
     private List<Actividad_producto> actividad_productos;
-
-    @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "kf_departamento", nullable = false)
-    private Departamento departamento;
-
-    @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "kf_operador", nullable = false)
-    private Operador operador;
 }

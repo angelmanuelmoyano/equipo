@@ -16,7 +16,7 @@ import javax.persistence.*;
 public class Contacto_sitio {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id_contacto_sitio;
+    private long id;
 
     private String contacto_sitio;
     private String celular_contacto_sitio;

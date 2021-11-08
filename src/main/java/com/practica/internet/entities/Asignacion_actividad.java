@@ -42,11 +42,4 @@ public class Asignacion_actividad {
     @JoinColumn(name = "kf_empleado", nullable = false)
     private Empleado empleado;
 
-    @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "kf_locacion", nullable = false)
-    private Locacion locacion;
-
-    @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "kf_operador", nullable = false)
-    private Operador operador;
 }
