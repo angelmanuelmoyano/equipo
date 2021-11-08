@@ -191,28 +191,29 @@
                         Registrar Empleados
                     </h5>
                 </div>
+                <!--formulario de registro de empleados-->
                 <div class="card-body">
-                    <form class="row g-3">
+                    <form class="row g-3" action="@{/empleado/{id}(id=${empleado.id})}">
                         <div class="col-md-6">
                             <label class="form-label">
                                 Nombres
                             </label>
-                            <input type="text" class="form-control" required>
+                            <input type="text" class="form-control" name="nombre_empleado"  th:field="*{nombre_empleado}" required>
 
                         </div>
                         <div class="col-md-6">
                             <label class="form-label">
                                 Apellido
                             </label>
-                            <input type="text" class="form-control" required>
+                            <input type="text" class="form-control" nombre="apellido_empleado" th:field="*{apellido_empleado}" required>
                         </div>
                         <div class="col-md-12">
                             <label class="form-label">
                                 Usuario
                             </label>
-                            <input type="text" class="form-control" required>
+                            <input type="text" class="form-control"  nombre="username" th:field="*{username}"required>
                         </div>
-                        <div class="col-md-6">
+                      <!--  <div class="col-md-6">
                             <label class="form-label">
                                 Cargo
                             </label>
@@ -222,121 +223,55 @@
                                 <option value="2">Two</option>
                                 <option value="3">Three</option>
                             </select>
-                        </div>
-                        <div class="col-md-6">
-                            <label class="form-label">
-                                Departamento
-                            </label>
-                            <select class="form-control" required>
-                                <option selected>Abrir para seleccionar Departamento</option>
-                                <option value="1">One</option>
-                                <option value="2">Two</option>
-                                <option value="3">Three</option>
-                            </select>
-                        </div>
+                        </div>-->
                         <div class="col-md-12">
                             <label class="form-label">
                                 Correo Electrónico
                             </label>
-                            <input type="text" class="form-control" required>
+                            <input type="text" class="form-control"  name="email_empleado" th:field="*{email_empleado}" required>
                         </div>
                         <div class="col-md-12">
                             <label class="form-label">
                                 Dirección
                             </label>
-                            <input type="text" class="form-control" required>
+                            <input type="text" class="form-control"  name="direccion" th:field="*{direccion}"  required>
                         </div>
                         <div class="col-md-6">
                             <label class="form-label">
                                 Fecha Nacimiento
                             </label>
-                            <input type="text" class="form-control" required>
-                        </div>
-                        <div class="col-md-6">
-                            <label class="form-label">
-                                Cedula
-                            </label>
-                            <input type="text" class="form-control" required>
+                            <input type="text" class="form-control" th:field="*{fecha_nacimiento}" required>
                         </div>
                         <div class="col-md-6">
                             <label class="form-label">
                                 Teléfono
                             </label>
-                            <input type="text" class="form-control" required>
+                            <input type="text" class="form-control" th:field="*{telefono}" required>
                         </div>
                         <div class="col-md-6">
                             <label class="form-label">
                                 Teléfono Celular
                             </label>
-                            <input type="text" class="form-control" required>
+                            <input type="text" class="form-control"  th:field="*{celular}" required>
                         </div>
-                        <div class="col-md-6">
-                            <label class="form-label">
-                                Tipo Sangre
-                            </label>
-                            <input type="text" class="form-control" required>
-                        </div>
+
                         <div class="col-md-6">
                             <label  class="form-label">
                                 Estado Civil
                             </label>
-                            <select class="form-control" required>
+                            <select class="form-control" th:field="*{estado_civil}" required>
                                 <option selected>Abrir para seleccionar Estado Civil</option>
-                                <option value="1">One</option>
-                                <option value="2">Two</option>
-                                <option value="3">Three</option>
+                                <option value="soltero">Soltero</option>
+                                <option value="casado">Casado</option>
+                                <option value="conviviente">En pareja </option>
                             </select>
                         </div>
-                        <div class="col-md-6">
-                            <label class="form-label">
-                                Cuenta Bancaria
-                            </label>
-                            <input type="text" class="form-control" required>
-                        </div>
-                        <div class="col-md-6">
-                            <label class="form-label">
-                                Entidad Financiera
-                            </label>
-                            <input type="text" class="form-control"  required>
-                        </div>
-                        <div class="col-md-12">
-                            <label class="form-label">
-                                Colocar Fotografía
-                            </label>
-                            <input class="form-control" type="file" id="formFile">
-                        </div>
+
                     </form>
                 </div>
             </div>
-            <div class="card text-dark bg-info mb-3">
-                <div class="card-header">
-                    <h5>
-                        Contacto Emergencia
-                    </h5>
-                </div>
-                <div class="card-body">
-                    <form class="row g-3">
-                        <div class="col-md-12">
-                            <label class="form-label">
-                                Nombre de Contacto
-                            </label>
-                            <input type="text" class="form-control" required>
-                        </div>
-                        <div class="col-md-6">
-                            <label class="form-label">
-                                Telefono
-                            </label>
-                            <input type="text" class="form-control" required>
-                        </div>
-                        <div class="col-md-6">
-                            <label class="form-label">
-                                Telefono Celular
-                            </label>
-                            <input type="text" class="form-control" required>
-                        </div>                        
-                    </form>
-                </div>
-            </div>
+
+
             <div class="card text-dark bg-info mb-3">
                 <div class="card-header">
                     <div class="d-grid gap-2 col-2 mx-auto">

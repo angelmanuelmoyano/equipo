@@ -25,7 +25,7 @@ public class controladorEmpleado {
                 return "views/inicio";
             }
         }
-        @GetMapping("/formularios/empleado/{id}")
+        @GetMapping("/empleado/{id}")
         public String formularioEmpleado(Model model,@PathVariable("id")long id){
             try {
                 if(id==0){
@@ -41,7 +41,7 @@ public class controladorEmpleado {
         }
 
 
-        @PostMapping("/formularios/empleado/{id}")
+        @PostMapping("/empleado/{id}")
         public String guardarEmpleado(
                 @ModelAttribute("empleado") Empleado empleado,
                 Model model,@PathVariable("id")long id
