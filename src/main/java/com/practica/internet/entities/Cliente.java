@@ -29,4 +29,9 @@ public class Cliente {
 
     @OneToMany(mappedBy = "cliente")
     private List<Asignacion_actividad> asignacion_actividads;
+
+    @OneToOne(cascade=CascadeType.ALL)
+    @JoinColumn(name="fk_producto")
+    private Producto producto;
+
 }
