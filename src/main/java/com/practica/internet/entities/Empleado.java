@@ -22,25 +22,10 @@ public class Empleado {
     private String nombre_empleado;
     private String apellido_empleado;
     private String email_empleado;
-    private String username;
-    private String password;
-    private String role;
-    private int is_active;
     private Date fecha_nacimiento;
     private String direccion;
     private String telefono;
-    private String celular;
-    private String cedula;
     private String estado_civil;
-    private String tipo_sangre;
-    private String cuenta_bancaria;
-    private String entidad_financiera;
-    private String contrasena_temporal;
-    private String nombre_contacto_emergencia;
-    private String telefono_contacto_emergencia;
-    private String celular_contacto_emergencia;
-    private Date usuario_creado;
-    private Date usuario_editado;
 
 
     @OneToMany(mappedBy = "empleado")

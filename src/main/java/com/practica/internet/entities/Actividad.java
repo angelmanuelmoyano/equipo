@@ -19,7 +19,9 @@ public class Actividad {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
-    private String titulo;
+    private String nombre;
+    private String descripcion;
+
 
     @OneToMany(mappedBy = "actividad")
     private List<Asignacion_actividad> asignacion_actividads;

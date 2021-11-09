@@ -19,12 +19,10 @@ public class Producto {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
+    private String nombre,
     private String descripcion;
-    private String serie;
     private float cantidad;
-    private String unidad;
-    private Date producto_creado;
-    private Date producto_editado;
+    private float precio;
 
     @OneToMany(mappedBy = "producto")
     private List<Actividad_producto> actividad_productos;

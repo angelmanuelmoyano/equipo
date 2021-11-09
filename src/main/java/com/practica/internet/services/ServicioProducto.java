@@ -1,7 +1,6 @@
 package com.practica.internet.services;
 
 import com.practica.internet.entities.Producto;
-import com.practica.internet.entities.Provincias;
 
 import com.practica.internet.repositories.RepositorioProducto;
 import org.springframework.beans.factory.annotation.Autowired;

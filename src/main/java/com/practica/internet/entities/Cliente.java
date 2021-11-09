@@ -25,11 +25,7 @@ public class Cliente {
     private String direccion_cliente;
     private String telefono_cliente;
     private String correo_cliente;
-    private Date cliente_creado;
-    private Date cliente_modificado;
 
-    @OneToMany(mappedBy = "cliente")
-    private List<Contacto_cliente> contacto_clientes;
 
     @OneToMany(mappedBy = "cliente")
     private List<Asignacion_actividad> asignacion_actividads;
