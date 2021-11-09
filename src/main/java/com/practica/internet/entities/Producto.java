@@ -25,5 +25,8 @@ public class Producto {
     private float precio;
 
     @OneToMany(mappedBy = "producto")
-    private List<Actividad_producto> actividad_productos;
+    private List<Asignacion_actividad> asignacion_actividads;
+
+    @OneToOne(mappedBy = "producto")
+    private Cliente cliente;
 }
