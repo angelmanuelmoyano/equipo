@@ -1,7 +1,9 @@
 package com.practica.internet.controllers;
 
 import com.practica.internet.entities.Asignacion_actividad;
-import com.practica.internet.services.ServicioAsignacion_actividad;
+import com.practica.internet.entities.Cliente;
+import com.practica.internet.entities.Empleado;
+import com.practica.internet.services.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -16,12 +18,28 @@ public class controladorAsignarActividad {
 
     @Autowired
     private ServicioAsignacion_actividad svcAsignacion_actividad;
+    @Autowired
+    private ServicioEmpleado svcEmpleado;
+    @Autowired
+    private ServicioProducto svcProducto;
+    @Autowired
+    private ServicioActividad svcActividad;
+    @Autowired
+    private ServicioCliente scvCliente;
 
     @GetMapping("/asignaciones")
     public String listarAsignaciones(Model model){
         try {
             List<Asignacion_actividad> asignacion_actividad = this.svcAsignacion_actividad.findAll();
             model.addAttribute("asignacion_actividad",asignacion_actividad);
+            List<Empleado> empleados = this.svcEmpleado.findAll();
+            model.addAttribute("empleados",empleados);
+            List<Producto> productos = this.svcProducto.findAll();
+            model.addAttribute("productos",productos);
+            List<Actividad> actividades = this.svcActividad.findAll();
+            model.addAttribute("actividades",actividades);
+            List<Cliente> clientes = this.scvCliente.findAll();
+            model.addAttribute("clientes",clientes);
             return "views/listado_asignaciones";
         }catch(Exception e){
             //model.addAttribute("error", e.getMessage());
