@@ -26,7 +26,9 @@ public class Empleado {
     private String direccion;
     private String telefono;
     private String estado_civil;
-
+    private String nro_documento;
+    private String nombre_contacto;
+    private String telefono_contacto;
 
     @OneToMany(mappedBy = "empleado")
     private List<Asignacion_actividad> asignacion_actividads;

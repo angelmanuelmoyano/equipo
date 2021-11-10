@@ -26,11 +26,11 @@ public class controladorProducto {
             model.addAttribute("productos",productos);
             return "views/listado_productos";
         }catch(Exception e){
-            //model.addAttribute("error", e.getMessage());
-            return "views/inicio";
+            model.addAttribute("error", e.getMessage());
+            return "error";
         }
     }
-    @GetMapping("/empleado/{id}")
+    @GetMapping("/producto/{id}")
     public String formularioProducto(Model model,@PathVariable("id")long id){
         try {
             if(id==0){
@@ -60,7 +60,7 @@ public class controladorProducto {
 
                 this.svcProducto.updateOne(producto,id);
             }
-            return "views/listado_empleados";
+            return "views/listado_productos";
         }catch(Exception e){
             model.addAttribute("error", e.getMessage());
 

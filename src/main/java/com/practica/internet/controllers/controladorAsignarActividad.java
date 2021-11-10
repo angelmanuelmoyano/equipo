@@ -1,9 +1,7 @@
 package com.practica.internet.controllers;
 
 import com.practica.internet.entities.Asignacion_actividad;
-import com.practica.internet.entities.Cliente;
 import com.practica.internet.services.ServicioAsignacion_actividad;
-import com.practica.internet.services.ServicioCliente;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -19,7 +17,7 @@ public class controladorAsignarActividad {
     @Autowired
     private ServicioAsignacion_actividad svcAsignacion_actividad;
 
-    @GetMapping("/clientes")
+    @GetMapping("/asignaciones")
     public String listarAsignaciones(Model model){
         try {
             List<Asignacion_actividad> asignacion_actividad = this.svcAsignacion_actividad.findAll();
@@ -30,7 +28,7 @@ public class controladorAsignarActividad {
             return "views/inicio";
         }
     }
-    @GetMapping("/cliente/{id}")
+    @GetMapping("/asignacion/{id}")
     public String formularioAsignaciones(Model model,@PathVariable("id")long id){
         try {
             if(id==0){
