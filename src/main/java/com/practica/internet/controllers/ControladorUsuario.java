@@ -18,7 +18,7 @@ public class ControladorUsuario {
     @Autowired
     private ServicioUsuario svcUsuario;
 
-    @PostMapping("/validar_username/{username}{password}")
+    @PostMapping("/validar_username{username},{password}")
     public String validarUsuario(Model model ,@PathVariable("username")String username,@PathVariable("password")String password){
         try {
             Usuario usuario = this.svcUsuario.validarUsername(username,password);

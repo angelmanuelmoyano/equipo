@@ -18,7 +18,7 @@
             </button>
         </div>
     </nav>
-    <form th:action="@{/validar_username/{username}(username=${usuario.username})}{password}(password=${usuario.password})}" method="post" th:object="${actividad}">
+    <form th:action="@{/validar_username(username=${usuario.username},password=${usuario.password})}" method="post" th:object="${usuario}">
         <div class="row mt-5">
             <div class="vstack gap-2 col-md-3 mx-auto">
                 <div class="card text-dark bg-info mb-3" style="max-width: 18rem;">
