@@ -32,7 +32,7 @@ public class ControladorUsuario {
         try {
             Usuario usuario = this.svcUsuario.validarUsername(username,password);
             model.addAttribute("usuario",usuario);
-            return "views/inicio";
+            return "views/listado_actividades";
         }catch(Exception e){
             model.addAttribute("error", e.getMessage());
             return "error";
