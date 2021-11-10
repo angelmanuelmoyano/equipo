@@ -197,7 +197,7 @@
                             <label class="form-label">
                                 Actividad
                             </label>
-                            <select class="form-control" th:field="*{fk_actividad}" required>
+                            <select class="form-control" th:field="*{actividades}"  required>
                                 <option selected value="">Abrir para seleccionar Actividad</option>
                                 <option th:each="actividad : ${actividades}" th:value="${actividad.id}" th:text="${actividad.nombre}"></option>
 
@@ -207,7 +207,7 @@
                             <label  class="form-label">
                                 Empleado
                             </label>
-                            <select class="form-control" th:field="*{fk_empleado}" required>
+                            <select class="form-control" th:field="*{empleados}" required>
                                 <option selected value="">Abrir para seleccionar Empleado</option>
                                 <option th:each="empleado : ${empleados}" th:value="${empleado.id}" th:text="${empleado.nombre_empleado}"></option>
 
@@ -217,7 +217,7 @@
                             <label  class="form-label">
                                 Cliente
                             </label>
-                            <select class="form-control" th:field="*{fk_cliente}" required>
+                            <select class="form-control" th:field="*{clientes}" required>
                                 <option selected value="">Abrir para seleccionar Cliente</option>
                                 <option th:each="cliente : ${clientes}" th:value="${cliente.id}" th:text="${cliente.nombre_cliente}"></option>
 
@@ -227,7 +227,7 @@
                             <label  class="form-label">
                                 Producto
                             </label>
-                            <select class="form-control" th:field="*{fk_producto}" required>
+                            <select class="form-control" th:field="*{productos}" required>
                                 <option selected value="">Abrir para seleccionar Producto</option>
                                 <option th:each="producto : ${productos}" th:value="${producto.id}" th:text="${producto.nombre}"></option>
 
