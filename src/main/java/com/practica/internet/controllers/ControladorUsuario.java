@@ -31,7 +31,7 @@ public class ControladorUsuario {
     public String validarUsuario(Model model ,@PathVariable("username")String username,@PathVariable("password")String password){
         try {
             Usuario usuario = this.svcUsuario.validarUsername(username,password);
-            model.addAttribute("Usuario",usuario);
+            model.addAttribute("usuario",usuario);
             return "views/inicio";
         }catch(Exception e){
             model.addAttribute("error", e.getMessage());
