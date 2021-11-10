@@ -32,14 +32,7 @@ public class controladorAsignarActividad {
         try {
             List<Asignacion_actividad> asignacion_actividad = this.svcAsignacion_actividad.findAll();
             model.addAttribute("asignacion_actividad",asignacion_actividad);
-            List<Empleado> empleados = this.svcEmpleado.findAll();
-            model.addAttribute("empleados",empleados);
-            List<Producto> productos = this.svcProducto.findAll();
-            model.addAttribute("productos",productos);
-            List<Actividad> actividades = this.svcActividad.findAll();
-            model.addAttribute("actividades",actividades);
-            List<Cliente> clientes = this.scvCliente.findAll();
-            model.addAttribute("clientes",clientes);
+
             return "views/listado_asignaciones";
         }catch(Exception e){
             //model.addAttribute("error", e.getMessage());
@@ -50,9 +43,25 @@ public class controladorAsignarActividad {
     public String formularioAsignaciones(Model model,@PathVariable("id")long id){
         try {
             if(id==0){
+               // List<Empleado> empleados = this.svcEmpleado.findAll();
+                model.addAttribute("empleados",empleados);
+
+                model.addAttribute("productos",productos);
+
+                model.addAttribute("actividades",actividades);
+
+                model.addAttribute("clientes",clientes);
                 model.addAttribute("asignacion_actividad",new Asignacion_actividad());
             }else{
                 model.addAttribute("asignacion_actividad",this.svcAsignacion_actividad.findById(id));
+                List<Empleado> empleados = this.svcEmpleado.findAll();
+                model.addAttribute("empleados",empleados);
+                List<Producto> productos = this.svcProducto.findAll();
+                model.addAttribute("productos",productos);
+                 List<Actividad> actividades = this.svcActividad.findAll();
+                model.addAttribute("actividades",actividades);
+                List<Cliente> clientes = this.scvCliente.findAll();
+                model.addAttribute("clientes",clientes);
             }
             return "views/registrar_asignacion";
         }catch(Exception e){
