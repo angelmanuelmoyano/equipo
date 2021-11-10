@@ -1,4 +1,5 @@
 package com.practica.internet.controllers;
+import com.practica.internet.entities.Asignacion_actividad;
 import com.practica.internet.entities.Usuario;
 import com.practica.internet.services.ServicioProducto;
 import com.practica.internet.services.ServicioUsuario;
@@ -17,7 +18,15 @@ public class ControladorUsuario {
 
     @Autowired
     private ServicioUsuario svcUsuario;
-
+    @GetMapping("/")
+    public String irLogin(Model model){
+        try{
+           // model.addAttribute("usuario",new Usuario());
+            return "views/InicioLogin";
+        }catch (Exception e){
+            return "views/inicio";
+        }
+    }
     @PostMapping("/validar_username/{username}/{password}")
     public String validarUsuario(Model model ,@PathVariable("username")String username,@PathVariable("password")String password){
         try {
