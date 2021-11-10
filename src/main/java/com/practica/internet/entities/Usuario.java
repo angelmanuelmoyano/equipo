@@ -11,12 +11,12 @@ import java.util.Date;
 import java.util.List;
 
 @Entity
-@Table(name = "usuario")
+@Table(name = "Usuario")
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class usuario {
+public class Usuario {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id ;

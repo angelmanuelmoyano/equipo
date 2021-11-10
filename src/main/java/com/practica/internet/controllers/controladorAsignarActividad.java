@@ -3,6 +3,8 @@ package com.practica.internet.controllers;
 import com.practica.internet.entities.Asignacion_actividad;
 import com.practica.internet.entities.Cliente;
 import com.practica.internet.entities.Empleado;
+import com.practica.internet.entities.Producto;
+import com.practica.internet.entities.Actividad;
 import com.practica.internet.services.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -44,16 +46,16 @@ public class controladorAsignarActividad {
         try {
             if(id==0){
                // List<Empleado> empleados = this.svcEmpleado.findAll();
-                model.addAttribute("empleados",empleados);
+                model.addAttribute("empleados",this.svcEmpleado.findAll());
 
-                model.addAttribute("productos",productos);
+                model.addAttribute("productos",this.svcProducto.findAll());
 
-                model.addAttribute("actividades",actividades);
+                model.addAttribute("actividades",this.svcActividad.findAll());
 
-                model.addAttribute("clientes",clientes);
-                model.addAttribute("asignacion_actividad",new Asignacion_actividad());
+                model.addAttribute("clientes",this.scvCliente.findAll());
+                model.addAttribute("asignacion",new Asignacion_actividad());
             }else{
-                model.addAttribute("asignacion_actividad",this.svcAsignacion_actividad.findById(id));
+                model.addAttribute("asignacion",this.svcAsignacion_actividad.findById(id));
                 List<Empleado> empleados = this.svcEmpleado.findAll();
                 model.addAttribute("empleados",empleados);
                 List<Producto> productos = this.svcProducto.findAll();
@@ -63,7 +65,7 @@ public class controladorAsignarActividad {
                 List<Cliente> clientes = this.scvCliente.findAll();
                 model.addAttribute("clientes",clientes);
             }
-            return "views/registrar_asignacion";
+            return "views/registrar_asignacion_actividad";
         }catch(Exception e){
             model.addAttribute("error", e.getMessage());
             return "views/error";

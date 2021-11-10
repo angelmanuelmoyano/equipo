@@ -38,7 +38,7 @@ public class controladorCliente {
             }else{
                 model.addAttribute("cliente",this.svcCliente.findById(id));
             }
-            return "views/registrar_producto";
+            return "views/registrar_cliente";
         }catch(Exception e){
             model.addAttribute("error", e.getMessage());
             return "views/error";
@@ -60,7 +60,7 @@ public class controladorCliente {
 
                 this.svcCliente.updateOne(cliente,id);
             }
-            return "views/listado_empleados";
+            return "redirect:/views/listado_clientes";
         }catch(Exception e){
             model.addAttribute("error", e.getMessage());
 

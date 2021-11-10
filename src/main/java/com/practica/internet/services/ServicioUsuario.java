@@ -1,6 +1,5 @@
 package com.practica.internet.services;
-import com.practica.internet.entities.Producto;
-import com.practica.internet.repositories.RepositorioProducto;
+import com.practica.internet.entities.Usuario;
 import com.practica.internet.repositories.RepositorioUsuario;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

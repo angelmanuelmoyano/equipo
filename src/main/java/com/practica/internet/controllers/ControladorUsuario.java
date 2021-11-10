@@ -1,5 +1,5 @@
 package com.practica.internet.controllers;
-import com.practica.internet.entities.Producto;
+import com.practica.internet.entities.Usuario;
 import com.practica.internet.services.ServicioProducto;
 import com.practica.internet.services.ServicioUsuario;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,7 +22,7 @@ public class ControladorUsuario {
     public String validarUsuario(Model model ,@PathVariable("username")String username,@PathVariable("password")String password){
         try {
             Usuario usuario = this.svcUsuario.validarUsername(username,password);
-            model.addAttribute("usuario",usuario);
+            model.addAttribute("Usuario",usuario);
             return "views/inicio";
         }catch(Exception e){
             model.addAttribute("error", e.getMessage());
