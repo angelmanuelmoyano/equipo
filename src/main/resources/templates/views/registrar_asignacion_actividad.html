@@ -199,7 +199,7 @@
                             </label>
                             <select class="form-control" th:field="*{fk_actividad}" required>
                                 <option selected value="">Abrir para seleccionar Actividad</option>
-                                <option value="act1">actividad 1</option>
+                                <option th:each="actividad : ${actividades}" th:value="${actividad.id}" th:text="${actividad.nombre}"></option>
 
                             </select>
                            </div>
@@ -209,7 +209,7 @@
                             </label>
                             <select class="form-control" th:field="*{fk_empleado}" required>
                                 <option selected value="">Abrir para seleccionar Empleado</option>
-                                <option value="emp">empleado 1</option>
+                                <option th:each="empleado : ${empleados}" th:value="${empleado.id}" th:text="${empleado.nombre_empleado}"></option>
 
                             </select>
                         </div>
@@ -219,7 +219,7 @@
                             </label>
                             <select class="form-control" th:field="*{fk_cliente}" required>
                                 <option selected value="">Abrir para seleccionar Cliente</option>
-                                <option value="cli">cliente 1</option>
+                                <option th:each="cliente : ${clientes}" th:value="${cliente.id}" th:text="${cliente.nombre_cliente}"></option>
 
                             </select>
                         </div>
@@ -229,13 +229,13 @@
                             </label>
                             <select class="form-control" th:field="*{fk_producto}" required>
                                 <option selected value="">Abrir para seleccionar Producto</option>
-                                <option value="pro">Producto 1</option>
+                                <option th:each="producto : ${productos}" th:value="${producto.id}" th:text="${producto.nombre}"></option>
 
                             </select>
                         </div>
                         <div class="col-md-12">
                             <div  class="card-header">
-                                <button type="button" class="btn btn-outline-danger"><h5>
+                                <button type="submit" class="btn btn-outline-danger"><h5>
                                     Guardar
                                 </h5></button>
                             </div>
