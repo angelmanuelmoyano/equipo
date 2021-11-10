@@ -21,7 +21,7 @@ public class ControladorUsuario {
     @GetMapping("/")
     public String irLogin(Model model){
         try{
-           // model.addAttribute("usuario",new Usuario());
+            model.addAttribute("usuario",new Usuario());
             return "views/InicioLogin";
         }catch (Exception e){
             return "views/inicio";
